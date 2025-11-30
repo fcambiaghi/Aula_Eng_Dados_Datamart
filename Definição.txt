@@ -15,8 +15,8 @@ Permanecendo as despesas em colunas distintas. Preste muita atenção para os c�
 3.3.1. Margem operacional
 3.3.2. Ticket bruto
 3.3.3. Ticket líquido
-3.3.4. Indicador de inadimplência
-3.3.5. Quantidade de alunos (NF)
+3.3.4. Quantidade de alunos (NF)
+Os demais cálculos estão definidos abaixo.
 
 Definições de tabelas:
 DIM_CENTRO_CUSTO
