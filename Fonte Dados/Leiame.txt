@@ -1,0 +1,10 @@
+Entendimento das fontes de dados.
+1. Arquivo de Faturamento: compreende o faturamento mensal e detalhado de 3 centros de custo para 2 competencias.
+2. Arquivo de Centro de Custos: descricao dos centros de custos do faturamento
+3. Despesas: despesas diversas das mesmas competencias e centros de custos do faturamento
+
+Observações. 
+A fonte do faturamento está detalhada em nota fiscal, enquando as despesas já estão agrupadas na 
+compentencia e centro de custo.
+Os centros de custos do faturamento e das despesas possuem códigos diferentes porque são fontes distintas. 
+No arquivo de Centro de Custo tem o de-para para resolver esse problema.

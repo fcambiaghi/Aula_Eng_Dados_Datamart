@@ -1,0 +1,38 @@
+Engenharia de Dados III - Construindo Datamart
+
+Staging area
+1. Criar tabelas no sqlite com a mesma estrutura das planilhas da fonte de dados.
+2. Fazer a extração das planilhas e carregar no sqlite
+
+Storage area
+1. Criar a tabela de Centro de Custo, unificando um único código para os centros de custos.
+2. Criar a tabela de Resultado por Centro de Custo.
+3. Ao carregar os dados nessa tabela, devemos nos atentar:
+3.1. Essa tabela deverá armazenar os valores do faturamento agrupado por competencia e centro de custo.
+3.2. Armazenar também os valores das despesas que já estão agrupadas por competencia e centro de custo. 
+Permanecendo as despesas em colunas distintas. Preste muita atenção para os códigos de centro de custo.
+3.3. Calcular os resultados para cada centro de custo e competencia, tais como:
+3.3.1. Margem operacional
+3.3.2. Ticket bruto
+3.3.3. Ticket líquido
+3.3.4. Indicador de inadimplência
+3.3.5. Quantidade de alunos (NF)
+
+Definições de tabelas:
+DIM_CENTRO_CUSTO
+- CCUSTO_ID
+- DESCRICAO
+
+FATO_RESULTADO
+- COMPETENCIA
+- CCUSTO_ID
+- FAT_BRUTO (VR_SERVICO)
+- FAT_LIQUIDO (BASE_CALCULO)
+- DESC_INCONDICIONAL (VR_SERVICO - BASE_CALCULO)
+- VALOR_DESPESAS
+- VALOR_IMPOSTOS (BASE_CALCULO * 0.0665) PIS COFINS E ISS
+- VALOR_PESSOAL
+- QTD_ALUNO (COUNT(NF))
+- TICKET_BRUTO (VR_SERVICO / QTD_ALUNO)
+- TICKET_LIQUIDO (BASE_CALCULO / QTD_ALUNO)
+- MARGEM_OPERACIONAL (((FAT_LIQUIDO - (VALOR_DESPESAS + VALOR_IMPOSTOS + VALOR_PESSOAL)) / FAT_LIQUIDO) * 100)
