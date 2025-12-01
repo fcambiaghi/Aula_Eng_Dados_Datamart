@@ -4,17 +4,6 @@ from pathlib import Path
 
 def excel_to_sqlite(excel_path: str, sqlite_db_path: str, table_name: str,
                     sheet_name=0, if_exists='fail', index=False, dtype_overrides: dict = None):
-    """
-    Lê excel e insere em banco sqlite.
-    - excel_path: caminho do arquivo .xlsx
-    - sqlite_db_path: caminho do arquivo .db (cria se não existir)
-    - table_name: nome da tabela no sqlite
-    - sheet_name: nome da planilha ou índice (padrão 0)
-    - if_exists: 'fail' | 'replace' | 'append' (padrão 'fail')
-    - index: se True, grava o índice do DataFrame como coluna
-    - dtype_overrides: dict {col_name: sqlalchemy_type_or_str} (opcional)
-    """
-
     # Ler planilha
     print(f"Lendo Excel: {excel_path} (sheet={sheet_name}) ...")
     df = pd.read_excel(excel_path, sheet_name=sheet_name, engine='openpyxl')
