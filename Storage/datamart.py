@@ -26,7 +26,7 @@ def copia_com_pandas(df: pd.DataFrame, table_name: str, db_path: Path):
     try:
         # escreve o DataFrame na tabela especificada
         df.to_sql(table_name, conn, if_exists='replace', index=False)
-        print(f"DataFrame copied to table '{table_name}' in database '{db_path}'.")
+        print(f"DataFrame copiado para a tabela '{table_name}' no banco de dados '{db_path}'.")
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
     finally:
